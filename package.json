@@ -1,0 +1,20 @@
+{
+  "name": "mywebpackmaster",
+  "version": "1.0.0",
+  "description": "My Webpack build",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darthmorgot/myWebpackMaster.git"
+  },
+  "author": "Master",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darthmorgot/myWebpackMaster/issues"
+  },
+  "homepage": "https://github.com/darthmorgot/myWebpackMaster#readme",
+  "private": true
+}
