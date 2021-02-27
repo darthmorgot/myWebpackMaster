@@ -22,7 +22,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, '../src/assets/img'),
-          to: 'assets/img'
+          to: 'images'
         },
         {
           from: path.resolve(__dirname, '../src/static'),
@@ -30,5 +30,34 @@ module.exports = {
         }
       ]
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(?:ico|gif|jpeg|jpg|png)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|otf|eot|svg|)$/i,
+        type: 'asset/inline',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts'
+            }
+          }
+        ]
+      }
+    ]
+  }
 };
