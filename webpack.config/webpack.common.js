@@ -34,7 +34,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(?:ico|gif|jpeg|jpg|png)$/i,
+        test: /\.(s[ac]ss|css)$/i,
+        use: [
+          {loader: 'style-loader'},
+          {loader: 'css-loader', options: {sourceMap: true}},
+          {loader: 'postcss-loader', options: {sourceMap: true}},
+          {loader: 'sass-loader', options: {sourceMap: true}}
+        ]
+      },
+      {
+        test: /\.(?:ico|gif|jpeg|jpg|png|svg)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -46,7 +55,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff(2)?|ttf|otf|eot|svg|)$/i,
+        test: /\.(woff(2)?|ttf|otf|eot|)$/i,
         type: 'asset/inline',
         use: [
           {
