@@ -1,0 +1,55 @@
+$mainFont: 'Roboto', Arial, sans-serif;
+$mainFontColor: #101010;
+$defaultColor: #ffffff;
+$mainSize: 16px;
+$desktopWidth: 1280px;
+
+@font-face {
+  font-family: $mainFont;
+  src: url('../fonts/Roboto.woff') format('woff')
+       url('../fonts/Roboto.woff2') format('woff2');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $mainFont;
+  font-size: $mainSize;
+  color: $defaultColor;
+}
+
+.container {
+  width: $desktopWidth;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #909399;
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.main {
+  background-color: #fc5c65;
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  img {
+    width: 500px;
+  }
+}
+
+.footer {
+  background-color: #909399;
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+}
