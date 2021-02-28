@@ -1,3 +1,5 @@
+import './assets/styles/main.scss';
+
 const test = (a, b = 5) => {
   let result = a + b;
   for (let i = 1; i <= 3; i++) {
