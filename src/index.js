@@ -9,3 +9,7 @@ const test = (a, b = 5) => {
 };
 
 console.log(test(2, 4));
+
+const testRow = 'This is test row';
+
+console.log(`Test: ${testRow}`);
