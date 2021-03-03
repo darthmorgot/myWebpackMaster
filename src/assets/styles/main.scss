@@ -24,7 +24,9 @@ body {
 }
 
 .header {
+  height: 200px;
   background-color: #909399;
+  background-image: url('../img/header-back.jpg');
 
   h1 {
     font-size: 32px;
