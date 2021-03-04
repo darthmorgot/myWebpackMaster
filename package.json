@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config/webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config/webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack serve --config webpack.config/webpack.config.js",
     "test:lint": "eslint .",
     "test": "npm run test:lint"
   },
@@ -37,6 +38,7 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.23.0",
     "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
   "browserslist": [
