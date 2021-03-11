@@ -1,12 +1,13 @@
-const path = require('path');
+const path = require('./paths.js');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   devtool: false,
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.build,
     filename: 'scripts/[name].[contenthash].bundle.js',
     publicPath: './'
   },
@@ -34,5 +35,14 @@ module.exports = {
         ]
       }
     ]
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin()
+    ],
+    runtimeChunk: {
+      name: 'runtime'
+    }
   }
 };
