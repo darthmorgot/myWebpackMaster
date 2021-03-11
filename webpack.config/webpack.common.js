@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('./paths.js');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -6,27 +6,27 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, '../src/index.js')
+    main: path.src + '/index.js'
   },
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.build,
     filename: '[name].bundle.js',
     publicPath: './'
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/template.html')
+      template: path.src + '/template.html'
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '../src/assets/img'),
+          from: path.src + '/assets/img',
           to: 'images'
         },
         {
-          from: path.resolve(__dirname, '../src/static'),
+          from: path.src + '/static',
           to: ''
         }
       ]
