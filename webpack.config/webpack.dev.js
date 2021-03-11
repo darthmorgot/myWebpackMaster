@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('./paths.js');
 const webpack = require('webpack');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     port: 8080,
     open: 'chrome',
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, '../dist'),
+    contentBase: path.build,
     compress: true,
     hot: true
   },
