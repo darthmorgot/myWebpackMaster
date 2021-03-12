@@ -38,11 +38,12 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [
-      new TerserPlugin()
-    ],
+    minimizer: [new TerserPlugin()],
     runtimeChunk: {
       name: 'runtime'
     }
+  },
+  performance: {
+    hints: false
   }
 };
