@@ -34,3 +34,5 @@ class Game {
 }
 const game = new Game();
 console.log(game.caller());
+
+console.log('Simple row');
