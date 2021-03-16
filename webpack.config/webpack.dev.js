@@ -12,6 +12,7 @@ module.exports = {
     compress: true,
     hot: true
   },
+  cache: true,
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ]
