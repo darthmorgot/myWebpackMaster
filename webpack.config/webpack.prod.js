@@ -1,6 +1,6 @@
 const path = require('./paths.js');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const {miniCssExtractPlugin, miniCssExtractLoader} = require('./plugins/mini-css-extract-plugin.js');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
@@ -11,18 +11,13 @@ module.exports = {
     filename: 'scripts/[name].[contenthash].bundle.js',
     publicPath: './'
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
-      chunkFilename: '[id].css'
-    })
-  ],
+  plugins: [miniCssExtractPlugin()],
   module: {
     rules: [
       {
         test: /\.(s[ac]ss|css)$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          miniCssExtractLoader(),
           {
             loader: 'css-loader',
             options: {
