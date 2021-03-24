@@ -1,7 +1,7 @@
 const path = require('./paths.js');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const htmlWebpackPlugin = require('./plugins/html-webpack-plugin.js');
+const copyWebpackPlugin = require('./plugins/copy-webpack-plugin.js');
 
 module.exports = {
   entry: {
@@ -14,23 +14,8 @@ module.exports = {
     clean: true
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.src + '/template.html',
-      hash: true
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.src + '/assets/img',
-          to: 'images'
-        },
-        {
-          from: path.src + '/static',
-          to: ''
-        }
-      ]
-    })
+    htmlWebpackPlugin(),
+    copyWebpackPlugin()
   ],
   module: {
     rules: [
