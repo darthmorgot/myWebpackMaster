@@ -13,7 +13,5 @@ module.exports = {
     hot: true
   },
   cache: true,
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
