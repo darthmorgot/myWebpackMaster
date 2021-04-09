@@ -1,7 +1,8 @@
 const path = require('./paths.js');
 
-const {miniCssExtractPlugin, miniCssExtractLoader} = require('./plugins/mini-css-extract-plugin.js');
 const TerserPlugin = require('terser-webpack-plugin');
+const {miniCssExtractPlugin} = require('./plugins/mini-css-extract-plugin.js');
+const stylePresetProd = require('./presets/style-preset-prod.js');
 
 module.exports = {
   mode: 'production',
@@ -13,23 +14,7 @@ module.exports = {
   },
   plugins: [miniCssExtractPlugin()],
   module: {
-    rules: [
-      {
-        test: /\.(s[ac]ss|css)$/i,
-        use: [
-          miniCssExtractLoader(),
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: false
-            }
-          },
-          'postcss-loader',
-          'sass-loader'
-        ]
-      }
-    ]
+    rules: [stylePresetProd()]
   },
   optimization: {
     minimize: true,
