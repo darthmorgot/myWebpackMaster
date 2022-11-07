@@ -3,6 +3,7 @@ const path = require('./paths.js');
 const htmlWebpackPlugin = require('./plugins/html-webpack-plugin.js');
 const copyWebpackPlugin = require('./plugins/copy-webpack-plugin.js');
 
+const htmlPreset = require('./presets/html-preset-common.js');
 const scriptPreset = require('./presets/script-preset-common.js');
 const stylePreset = require('./presets/style-preset-common.js');
 const imagePreset = require('./presets/image-preset-common.js');
@@ -24,6 +25,7 @@ module.exports = {
   ],
   module: {
     rules: [
+      htmlPreset(),
       scriptPreset(),
       stylePreset(),
       imagePreset(),
