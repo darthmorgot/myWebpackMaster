@@ -1,16 +1,10 @@
 const fontPreset = () => {
   return {
     test: /\.(woff(2)?|ttf|otf|eot|)$/i,
-    type: 'asset/inline',
-    use: [
-      {
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'fonts'
-        }
-      }
-    ]
+    type: 'asset/resource',
+    generator: {
+      filename: 'assets/fonts/[name][ext]',
+    },
   };
 };
 
